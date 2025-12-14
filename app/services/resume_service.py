@@ -1,9 +1,11 @@
 from typing import Optional, Dict, Any
 
 from app.services.prompt_service import PromptService
-from app.services.mock_llm_service import MockLLMService
+from app.services.llm_service import LLMService
 from app.services.jd_service import JDService
 from app.services.pdf_service import PDFService
+from app.utils.resume_sanitizer import ResumeSanitizer
+
 
 
 class ResumeService:
@@ -13,7 +15,7 @@ class ResumeService:
 
     def __init__(self):
         self.prompt_service = PromptService()
-        self.llm_service = MockLLMService()
+        self.llm_service = LLMService()
         self.jd_service = JDService()
         self.pdf_service = PDFService()
 
@@ -51,7 +53,11 @@ class ResumeService:
         )
 
         # 4. Generate resume via LLM
-        resume_output = await self.llm_service.generate_resume(prompt)
+        raw_output = await self.llm_service.generate_resume(prompt)
+        sanitized = ResumeSanitizer.sanitize(raw_output)
+        final_resume = ResumeStructureEnforcer.enforce(sanitized)
+
+
 
         return {
             "resume_text": resume_output,

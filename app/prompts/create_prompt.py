@@ -1,31 +1,45 @@
 CREATE_PROMPT = """
 MODE: RESUME CREATION FROM SCRATCH
 
-You are given:
-- Candidate details (skills, projects, experience)
-- Target job description
-- Experience level
-- Role type
-- Industry
+You must generate a resume in the following style:
 
-Your tasks:
-1. Create a professional resume tailored strictly to the job description.
-2. Generate realistic experience or project bullet points based on:
-   - Provided skills
-   - Tools
-   - Industry expectations
-3. Ensure the resume matches the candidate's experience level.
-4. Use role-specific terminology and ATS-friendly keywords.
-5. Do NOT exaggerate or fabricate experience.
+RESUME STYLE:
+- Clean, professional, and ATS-optimized
+- Clear section headings
+- Bullet points for experience and projects
+- Plain text or markdown format
 
-OUTPUT REQUIREMENTS:
-- Structured resume with standard sections:
-  Header
-  Professional Summary
-  Skills
-  Experience or Projects
-  Education
-  Certifications (optional)
-- Plain text or markdown format only.
+
+STRICT STYLE RULES:
+- No markdown
+- No explanations
+- No placeholders
+- No summary unless explicitly provided
+- Focus on Experience, Projects, Skills
+- Use dense, technical bullet points
+- Use action verbs (Built, Implemented, Designed, Integrated)
+- Each bullet must include:
+  action + technology + purpose or impact
+- No decorative symbols
+- Use "-" for bullets only
+
+CONTENT RULES:
+- Do NOT invent companies or job roles
+- If experience is not provided, skip Experience section
+- Projects must be detailed and technical
+- Skills must be grouped logically
+
+SECTION ORDER (STRICT):
+1. Name + Contact line
+2. Experience (if any)
+3. Projects
+4. Education
+5. Skills
+6. Achievements (optional)
+7. Certifications (optional)
+
+OUTPUT:
+Return ONLY the resume content in plain text.
+
 
 """

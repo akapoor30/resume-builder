@@ -111,3 +111,31 @@ Consistent bullets
 If asked “Explain your project”, you’ll say:
 
 “I designed a modular FastAPI system where resume parsing, job analysis, prompt engineering, and LLM interaction are separated using SOLID principles. This allows deterministic resume generation and easy extension to other roles or LLM providers.”
+
+
+{
+  "candidate_name": "Ansh Kapoor",
+  "experience_level": "1-3",
+  "role_type": "Backend Engineer",
+  "industry": "Product",
+  "skills": [
+    "Python",
+    "FastAPI",
+    "REST APIs",
+    "SQL",
+    "PostgreSQL",
+    "Git",
+    "Docker"
+  ],
+  "projects": [
+    {
+      "name": "AI Resume Builder",
+      "description": "Developed an AI-powered resume generation and refactoring system using FastAPI and OpenRouter. Implemented clean architecture with separate services for prompt handling, resume processing, and PDF generation."
+    },
+    {
+      "name": "Backend Task Management API",
+      "description": "Built a RESTful backend service using FastAPI and PostgreSQL to manage tasks and users, including CRUD operations, authentication-ready architecture, and proper request validation."
+    }
+  ],
+  "job_description": "We are looking for a Backend Engineer with strong experience in Python and FastAPI. The candidate should have experience building REST APIs, working with SQL databases, and writing clean, maintainable backend code. Familiarity with Docker and version control systems like Git is a plus."
+}

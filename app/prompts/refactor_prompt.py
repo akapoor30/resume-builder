@@ -31,5 +31,16 @@ Your tasks:
 OUTPUT REQUIREMENTS:
 - Return the final resume in clean plain text or markdown format.
 - Use standard resume sections only.
-- Provide a list of ATS keywords included in the resume.s
+- Provide a list of ATS keywords included in the resume
+
+STRICT OUTPUT RULES:
+- Output ONLY the resume content.
+- Do NOT include explanations, comments, or summaries.
+- Do NOT use Markdown syntax.
+- Do NOT use ``` or ### or **.
+- Use plain text only.
+- Use "-" for bullet points only.
+- If experience is not provided, DO NOT invent company names or roles.
+- If a field is missing, OMIT the section completely.
+
 """
