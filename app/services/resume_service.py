@@ -1,7 +1,7 @@
 from typing import Optional, Dict, Any
 
 from app.services.prompt_service import PromptService
-from app.services.llm_service import LLMService
+from app.services.mock_llm_service import MockLLMService
 from app.services.jd_service import JDService
 from app.services.pdf_service import PDFService
 
@@ -13,7 +13,7 @@ class ResumeService:
 
     def __init__(self):
         self.prompt_service = PromptService()
-        self.llm_service = LLMService()
+        self.llm_service = MockLLMService()
         self.jd_service = JDService()
         self.pdf_service = PDFService()
 
