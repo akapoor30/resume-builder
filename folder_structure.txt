@@ -1,0 +1,45 @@
+resume-ai-builder/
+│
+├── app/
+│   ├── main.py                  # FastAPI app entry point
+│   │
+│   ├── api/                     # API layer (routes only)
+│   │   ├── __init__.py
+│   │   ├── routes.py            # Resume-related endpoints
+│   │
+│   ├── core/                    # Core business logic
+│   │   ├── __init__.py
+│   │   ├── config.py            # Env & app config
+│   │   ├── constants.py         # App-wide constants
+│   │
+│   ├── services/                # Application services
+│   │   ├── __init__.py
+│   │   ├── pdf_service.py       # PDF text extraction
+│   │   ├── jd_service.py        # Job description analyzer
+│   │   ├── resume_service.py    # Resume processing logic
+│   │   ├── prompt_service.py    # Prompt construction
+│   │   ├── llm_service.py       # OpenAI interaction
+│   │
+│   ├── models/                  # Pydantic models
+│   │   ├── __init__.py
+│   │   ├── request_models.py
+│   │   ├── response_models.py
+│   │
+│   ├── utils/                   # Helpers & utilities
+│   │   ├── __init__.py
+│   │   ├── text_cleaner.py
+│   │   ├── keyword_extractor.py
+│   │
+│   └── exceptions/              # Centralized error handling
+│       ├── __init__.py
+│       └── custom_exceptions.py
+│
+├── tests/                       # Unit & integration tests
+│   ├── __init__.py
+│   ├── test_prompt_service.py
+│   ├── test_resume_service.py
+│
+├── .env
+├── requirements.txt
+├── README.md
+└── run.sh

@@ -1,0 +1,13 @@
+# Python virtual environment
+.venv/
+
+# Local env files
+.env
+
+# Byte-compiled / cache
+__pycache__/
+
+# Distribution / packaging
+dist/
+build/
+.egg-info/

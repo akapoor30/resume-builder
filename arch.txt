@@ -1,0 +1,113 @@
+Client (Web / Postman / UI)
+        |
+        v
+FastAPI Backend
+        |
+        +-- Resume Upload API (PDF)
+        |
+        +-- Job Description Input API
+        |
+        +-- Resume Mode Selector
+        |     ├─ Refactor Mode
+        |     └─ Create Mode
+        |
+        +-- Resume Processing Engine
+              ├─ PDF Text Extractor
+              ├─ JD Keyword Analyzer
+              ├─ Resume Analyzer
+              ├─ Prompt Builder
+              ├─ OpenAI LLM
+              ├─ Resume Formatter (ATS)
+              └─ PDF Generator (optional)
+
+
+API Layer (FastAPI)
+
+Responsible for:
+
+Receiving resume PDF
+
+Receiving JD text
+
+Receiving candidate details
+
+Mode selection
+
+Endpoints:
+
+/upload-resume
+
+/generate-resume
+
+/health
+
+2️⃣ Resume Processing Engine (Brain of the App)
+
+This is where your portfolio value shines.
+
+Sub-components:
+a) PDF Parser
+
+Extract clean text from resume PDF
+
+Remove headers, footers, junk characters
+
+b) Job Description Analyzer
+
+Extract:
+
+Skills
+
+Tools
+
+Role keywords
+
+Soft skills
+
+Categorize keywords (must-have vs nice-to-have)
+
+c) Resume Analyzer (Refactor Mode)
+
+Detect:
+
+Weak bullets
+
+Missing keywords
+
+Irrelevant sections
+
+d) Prompt Builder ⭐ (MOST IMPORTANT)
+
+Inject:
+
+System prompt (Resume Architect)
+
+Mode-specific instructions
+
+Resume content (if any)
+
+JD keywords
+
+Produces deterministic, high-quality prompts
+
+e) OpenAI Client
+
+Calls GPT
+
+Handles retries, token limits
+
+f) Resume Formatter
+
+Ensures:
+
+ATS-friendly format
+
+Clean sections
+
+Consistent bullets
+
+🧪 STEP 2 CHECKPOINT — What Interviewers Love
+
+If asked “Explain your project”, you’ll say:
+
+“I designed a modular FastAPI system where resume parsing, job analysis, prompt engineering, and LLM interaction are separated using SOLID principles. This allows deterministic resume generation and easy extension to other roles or LLM providers.”
